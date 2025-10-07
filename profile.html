@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <h2 id="welcome">✅ Welcome!</h2>
+    <p id="userEmail"></p>
+    <p id="userAge"></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get("username");
+        const email = params.get("email");
+        const age = params.get("age");
+
+        if (username) {
+            document.getElementById("welcome").textContent = "✅ Welcome, " + username + "!";
+        }
+        if (email) {
+            document.getElementById("userEmail").textContent = "📧 Email: " + email;
+        }
+        if (age) {
+            document.getElementById("userAge").textContent = "🎂 Age: " + age;
+        }
+    </script>
+</body>
+</html>
